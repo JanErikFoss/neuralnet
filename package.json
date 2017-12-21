@@ -1,0 +1,11 @@
+{
+  "name": "neuralnet",
+  "version": "1.0.0",
+  "description": "Neural network experimentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jan Erik Sola Foss",
+  "license": "ISC"
+}
