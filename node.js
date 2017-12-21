@@ -14,7 +14,7 @@ class Node {
   }
 
   getConnections() {
-    return this.getConnections()
+    return this.connections
   }
 
   ping(delta) {

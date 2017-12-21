@@ -1,8 +1,5 @@
 
 const Layer = require("./layer")
-const Connection = require("./connection")
-
-const ACTIVATION_WEIGHT = 1
 
 class Network {
   constructor(options, layers) {
