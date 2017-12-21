@@ -23,6 +23,10 @@ class Layer {
     this.identify()
     this.nodes.forEach(node => node.print())
   }
+
+  toString() {
+    return "[" + this.nodes.map(node => node.toString()).join(", ") + "]"
+  }
 }
 
 module.exports = Layer

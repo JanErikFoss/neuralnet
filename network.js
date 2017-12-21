@@ -1,6 +1,9 @@
 
 const log = require("node-simple-logger")
 const Layer = require("./layer")
+const Connection = require("./connection")
+
+const ACTIVATION_WEIGHT = 1
 
 class Network {
   constructor(options, layers) {
@@ -15,7 +18,21 @@ class Network {
       })
     }
 
+    this.inputLayer = this.layers[0]
+    this.inputConnections = this.inputLayer.getNodes().map(node => new Connection(null, node))
+
     options.print && this.print()
+  }
+
+  activate(nodes) {
+    try {
+      this.inputConnections.forEach(con => con.activate(ACTIVATION_WEIGHT))
+    } catch(err) {
+      return console.log("Failed to activate network: ", err)
+    }
+
+    const outputLayer = this.layers[this.layers.length-1]
+    console.log("Output: " + outputLayer.toString())
   }
 
   identify() {

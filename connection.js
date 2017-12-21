@@ -8,6 +8,11 @@ class Connection {
     this.weight = weight
   }
 
+  activate(nWeight) {
+    const nodeWeight = nWeight || this.n1.getWeight()
+    this.n2.ping(nodeWeight * this.weight)
+  }
+
   getWeight() {
     return this.weight
   }
