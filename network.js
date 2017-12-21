@@ -3,7 +3,7 @@ const log = require("node-simple-logger")
 const Layer = require("./layer")
 
 class Network {
-  constructor(options, ...layers) {
+  constructor(options, layers) {
     this.index = options.index || 0
     this.layers = Array(layers.length)
 
