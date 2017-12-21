@@ -32,6 +32,10 @@ class Network {
     console.log("Output: " + outputLayer.toString())
   }
 
+  getLayers() {
+    return this.layers
+  }
+
   identify() {
     console.log("Network " + this.index)
   }

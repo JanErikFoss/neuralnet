@@ -6,16 +6,15 @@ const INITIAL_WEIGHT = 0.5
 class Node {
   constructor(nodeIndex, nextLayer, weight = INITIAL_WEIGHT, options) {
     this.nodeIndex = nodeIndex
-    this.nextLayer = nextLayer
     this.weight = weight
 
-    this.connections = this.nextLayer 
-      ? this.createConnections()
+    this.connections = nextLayer 
+      ? nextLayer.getNodes().map(node => new Connection(this, node))
       : []
   }
 
-  createConnections() {
-    return this.nextLayer.getNodes().map(node => new Connection(this, node))
+  getConnections() {
+    return this.getConnections()
   }
 
   ping(delta) {
