@@ -1,5 +1,4 @@
 
-const log = require("node-simple-logger")
 const Connection = require("./connection")
 
 const INITIAL_WEIGHT = 0.5
